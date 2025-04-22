@@ -24,7 +24,7 @@ body {
   }
   form {
     width: 50%;
-    margin-top: 20px;
+    margin: 20px auto;
     border: 2px solid black;
     padding: 2rem;
     display: grid;
