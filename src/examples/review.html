@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoo Animals</title>
+  <link rel="stylesheet" href="review.css">
+  <script src="review.js" defer></script>
+</head>
+<body>
+  <h1>Welcome to the Zoo!</h1>
+
+  <p>This page showcases some <span class="animal">zoo animals</span> and basic HTML, CSS, and JavaScript concepts.</p>
+
+  <h2>Animal Table</h2>
+  <table>
+    <tr>
+      <th>Animal</th>
+      <th>Habitat</th>
+    </tr>
+    <tr>
+      <td>Lion</td>
+      <td>Savanna</td>
+    </tr>
+    <tr>
+      <td>Penguin</td>
+      <td>Antarctica</td>
+    </tr>
+    <tr>
+      <td>Elephant</td>
+      <td>Forest</td>
+    </tr>
+  </table>
+
+  <h2>Join Our Zoo Club</h2>
+  <form id="zooForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />    
+    <label for="animal">Favorite Animal:</label>
+    <input type="text" id="animal" name="animal" required />    
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="confirmation"></p>
+
+  <h2>Click the Button!</h2>
+  <button id="highlightButton">Highlight Animals</button>
+
+</body>
+</html>
