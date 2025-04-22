@@ -3,6 +3,10 @@ body {
     background-color: #f0f8ff;
     padding: 20px;
   }
+  img{
+    width: 800px;
+    border: 10px #2e8b57 dashed;
+  }
   h1 {
     color: #2e8b57;
   }
