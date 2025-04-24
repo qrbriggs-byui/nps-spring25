@@ -1,10 +1,13 @@
-// Handle form submission
-document.getElementById('zooForm').addEventListener('submit', function(event) {
+// Function to handle form submission
+function handleForm(event){
     event.preventDefault();
     const name = document.getElementById('name').value;
-    const animal = document.getElementById('animal').value;
-    document.getElementById('confirmation').textContent = `Thanks, ${name}! We love ${animal}s too!`;
-    });
+    const animal = document.querySelector('#animal').value;
+    document.getElementById('confirmation').innerText = `Thanks, ${name}! We love ${animal}s too!`;
+}
+
+// Handle form submission
+document.getElementById('zooForm').addEventListener('submit', handleForm);
 
 // Add click event to highlight elements
 document.getElementById('highlightButton').addEventListener('click', function() {
