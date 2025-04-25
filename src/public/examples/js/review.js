@@ -10,7 +10,7 @@ function handleForm(event){
 document.getElementById('zooForm').addEventListener('submit', handleForm);
 
 // Add click event to highlight elements
-document.getElementById('highlightButton').addEventListener('click', function() {
+document.getElementById('highlightButton').addEventListener('click', () => {
     const animals = document.querySelectorAll('.animal');
     animals.forEach(el => el.classList.toggle('highlight'));
     });
