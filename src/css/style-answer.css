@@ -86,176 +86,103 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-/* Global styles */
+/* Global navbar styling */
 
-* {
-  box-sizing: border-box;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
-  font-weight: var(--bs-body-font-weight);
-}
-img {
-  max-width: 100%;
-}
-
-body {
-  font-family: var(--bs-body-font-family);
-  font-size: 18px;
-  margin: 0;
-}
-
-a:link,
-a:visited {
-  color: var(--bs-link-color);
-}
-
-a:hover {
-  color: var(--bs-link-hover-color);
-}
-
-/* Skip links styling */
-.skip-links ul {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.skip-links a {
-  font-size: 11px;
-  font-size: 0.6875rem;
-  position: absolute;
-  right: 20px;
-  top: -200px;
-  z-index: -1;
-}
-
-.skip-links a:focus {
-  top: 2px;
-  z-index: 9999;
-}
-
-/* Title and logo styling */
-
-.site-title {
-  display: flex;
-  align-items: center;
-}
-.site-title > span {
-  font-size: 1rem;
-  margin-left: 0.3em;
-}
-
-.logo {
-  height: 0;
-  width: 0;
-  margin: 0.5em;
-  display: inline-block;
-  border-top: 34px solid var(--bs-light-green);
-  border-left: 13px solid transparent;
-  border-right: 13px solid transparent;
-}
-
-/* Utility styles */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-header {
+.global-header {
   background-color: var(--bs-black);
+  color: white;
+  display: flex;
+  justify-content: space-between;
   fill: white;
 }
 
-.icon{
+.global-header a:link,
+.global-header a:visited,
+#park-header a:link,
+#park-header a:visited {
+  color: white;
+  text-decoration: none;
+}
+.global-header .icon {
   width: 20px;
   height: 20px;
 }
 
-/* img{
-  height: 200px;
-  object-fit: fill;
-} */
-
-section.global-header > a, 
-section.global-header > nav > ul > li > div > a, 
-body > header > section.global-header > div > a{
-  color: var(--bs-white);
-  text-decoration: none;
-}
-
-.global-header{
-  display: grid;
-  grid-template-columns: 1fr 120px;
-}
-
-#global-nav-toggle{  
-  background-color: white;
-  color: black;    
-  border-radius: 10px;
-  margin-left: 8px;
-  padding: 8px;
-  font-weight: bold;
-}
-
-#global-nav-toggle svg{
-  background-color: transparent;  
-}
-
-.park-hero{
-  background-image: url('https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg');
-  height: 300px;
-}
-
-#park-header{
-  position: relative;
-}
-
-.park-header-title{
-  position: absolute;
-  top: 200px;
-  display: flex;  
-  color: white;  
-  background-color: #00000077;
-  width: 100%;  
+.global-header__right {
+  display: flex;
   align-items: center;
 }
-
-.park-header-title p{
-  font-size: 2rem;  
+.global-header__right .search-icon {
   padding: 0 1rem;
+  margin-top: 6px;
 }
-
-.park-header-subtitle p{
-  font-size: 1.25rem;  
-}
-.park-nav{
-  width: 100%;
-  justify-items: center;
-}
-
-.park-nav ul{
-  display: flex;      
-}
-
-.park-nav ul li a {
+.global-header__right button {
+  background-color: transparent;
+  border: none;
   color: white;
-  text-decoration: none;  
-}
-.park-nav ul li a svg{
-  display: block;      
-  justify-self: center;  
-}
-.park-nav ul li{
-  padding: 1rem;
-  text-align: center;
+  font-size: 1rem;
+  padding: 1.2em;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  border-left: 1px solid var(--bs-grey-5);
 }
 
+/* Hero banner */
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.hero-banner > img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+.hero-banner__content {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 1em;
+}
+
+.hero-banner__title {
+  font-size: 1.8em;
+}
+
+.hero-banner__subtitle {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+/* Park nav styling */
+
+.park-nav > ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bs-black);
+  font-size: 0.8rem;
+}
+.park-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 2em;
+}
+.park-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.park-nav svg {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/alice.js" defer></script>
+    <title>WDD 231 - Week 2 Stuff</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p>Link to <a href="alice.json">alice.json</a></p>
+    <p>Check the console for more stuff.</p>
+    <textarea id="og-alice" cols="60" rows="20">
+{
+    "name": "Alice",
+    "age": 30,
+    "isStudent": false,
+    "courses": ["Math", "Science", "History"],
+    "address": {
+        "street": "123 Main St",
+        "city": "Rexburg",
+        "state": "ID"
+    }
+}
+    </textarea>
+    <p><button type="button" id="go-alice">Parse Alice</button></p>
+    <hr>
+    <label>Awesomeness Index: <input id="awesomeness" type="range" min="1" max="100"></label>
+    <p>Add awesomness index to Alice object and stringify:</p>
+    <p><button type="button" id="stringify-alice">Stringify Alice</button></p>
+    <textarea cols="60" rows="20" id="new-alice"></textarea>
+</body>
+</html>

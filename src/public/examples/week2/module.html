@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Using ES Modules</title>
+    <script type="module" src="js/my-module.mjs"></script>
+    <script type="module" src="js/main.js" defer></script>
+    <style>
+        body{
+            background-color: aliceblue;
+            font-size: 1.5rem;
+        }
+        input{
+            padding: .5rem;
+            font-size: 1.5rem;
+        }
+        button{
+            font-size: 1.5rem;
+            padding: .5rem;
+        }
+    </style>    
+</head>
+<body>
+    <h1>Modules Example</h1>
+    <p id="greeting"></p>
+    <p>Enter a radius in whole numbers: <input id="radius"></p>
+    <p><button type="button" id="compute-area">Compute the Area</button></p>
+    <p><span id="radius-message"></span></p>
+</body>
+</html>
