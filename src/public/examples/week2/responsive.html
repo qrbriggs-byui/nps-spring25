@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            font-size: 1.5rem;
+        }
+        input{
+            padding: .5rem;
+            font-size: 1.5rem;
+        }
+        button{
+            font-size: 1.5rem;
+            padding: .5rem;
+        }
+        .card{
+            max-width: 400px;
+            border: 5px solid black;
+            padding: 1rem;
+            margin: 1rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .card p{
+            text-align: justify;
+        }
+        .card img{
+            border: 4px darkblue solid;                        
+        }
+        #method-1{
+            border: 10px dashed grey;
+        }
+        #method-2{
+            border: 10px dashed grey;            
+        }
+        #method-3{
+            border: 10px dashed grey;            
+        }
+        @media screen and (min-width: 1200px){
+            #method-1{
+                border: 10px dashed purple;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            #method-2{
+                display: flex;                
+            }
+            #method-3{
+                border: 10px dashed plum;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+    </style> 
+</head>
+<body>
+    <div id="method-1">
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>    
+    </div>
+    <div id="method-2">
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>    
+    </div>    
+    <div id="method-3">
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>
+        <section class="card">
+            <img src="https://placecats.com/300/400" alt="here kitty!">
+            <h3>This is a CAT!</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo est, quae, dicta quidem cum atque eos nesciunt alias nemo sapiente reprehenderit laboriosam aspernatur perspiciatis et, accusantium laudantium necessitatibus optio ut saepe repudiandae. Quasi ea alias, ratione aperiam rem veritatis ab.</p>
+        </section>    
+    </div>       
+</body>
+<script>
+
+</script>
+</html>

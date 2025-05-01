@@ -1,0 +1,51 @@
+[
+{
+    "name": "Chocolate Chip Cookies",
+    "ingredients": [
+        {
+            "unit": "pound",
+            "qty": 1,
+            "ingredient": "butter -softened"
+        },
+        {
+            "unit": "cup",
+            "qty": 1.5,
+            "ingredient": "brown sugar"
+        },
+        {
+            "unit": "cup",
+            "qty": 1,
+            "ingredient": "white sugar"
+        },
+        {
+            "unit": "",
+            "qty": 3,
+            "ingredient": "egg"
+        },
+        {
+            "unit": "cup",
+            "qty": 3,
+            "ingredient": "egg"
+        }
+    ],
+    "instructions": [
+        "Cream the butter and sugar together, then beat in the eggs and vanilla",
+        "Mix in salt, soda and flour",
+        "Add chocolate chips and coconut",
+        "Bake 8-10 minutes at 350 F"
+    ]
+},
+{
+    "name":"spaghetti",
+    "ingredients":[
+        {
+            "unit": "pound",
+            "qty": 1,
+            "ingredient": "spaghetti noodles"
+        }
+    ],
+    "instructions":[
+        "Cook the spaghetti in boiling water and serve."
+    ]
+}
+]
