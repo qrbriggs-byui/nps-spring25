@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Examples</title>
+</head>
+<p>Nothing to see here - look at the JavaScript console...</p>
+<body>
+
+    <script>
+// IF/ELSE example
+let score = 75;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: Below C");
+}
+
+// SWITCH example
+let day = "Wednesday";
+
+switch (day) {
+  case "Monday":
+    console.log("Start of the week.");
+    break;
+  case "Friday":
+    console.log("Almost weekend!");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log("It's the weekend!");
+    break;
+  default:
+    console.log("Just another day.");
+}        
+
+// Ternary Operator example
+let isMember = true;
+let discount = isMember ? 0.10 : 0; // If isMember is true, discount is 0.10, otherwise it's 0.
+
+console.log(`Your discount is: ${discount}`);
+
+// Loose vs Strict equality + type coersion
+let x = 10;
+let y = "10";
+let z = 5;
+
+console.log(x == y);   // true (type coercion: "10" becomes 10)
+console.log(x === y);  // false (different types: number and string)
+console.log(x > z);    // true
+console.log(z < y);    // true (type coercion: "10" becomes 10)
+
+// Truthy vs Falsy
+// Falsy values include:
+// false
+// null
+// undefined
+// 0 (the number zero)
+// NaN (Not-a-Number)
+// "" (an empty string)
+// ANYTHING ELSE is truthy
+
+let name = "Alice";
+let count = 0;
+let items = [];
+let user = {};
+
+if (name) { // "Alice" is truthy
+  console.log("Name is defined.");
+}
+
+if (count) { // 0 is falsy, this block won't execute
+  console.log("Count is not zero.");
+}
+
+if (items) { // [] (empty array) is truthy
+  console.log("Items array exists.");
+}
+
+if (user) { // {} (empty object) is truthy
+  console.log("User object exists.");
+}
+
+// Functions that return booleans can appear in decisions
+function isUserLoggedIn() {
+  // ... some logic to check if the user is logged in ...
+  return true; // Or false, depending on the state
+}
+
+if (isUserLoggedIn()) {
+  console.log("Welcome back!");
+}
+
+// Existance checks
+let myVariable; // Initially undefined
+
+if (myVariable) { // undefined is falsy
+  console.log("myVariable has a value.");
+}
+
+myVariable = "something";
+
+if (myVariable) { // "something" is truthy
+  console.log("myVariable now has a value.");
+}
+    </script>
+</body>
+
+</html>

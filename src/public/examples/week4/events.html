@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            font-size: 1.5rem;
+        }
+        button{
+            background-color: blue;
+            color: white;  
+            font-size: 1.5rem;
+            padding: .5rem;          
+        }
+        .xl{            
+            background-color: cyan;
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Panic Button!!!</h1>
+    <p>Whatever you do, <button type="button" id="mybutton">DON'T CLICK THIS BUTTON!!!</button></p>
+    <p id="hoverme">Whatever you do, DON'T HOVER OVER THIS TEXT!!!</p>
+<script>
+let mybutton = document.getElementById("mybutton");
+mybutton.addEventListener("click", (event) => {
+// target: The DOM element that triggered the event.   
+// currentTarget: The DOM element that the event listener was attached to (this can be different from target in event delegation).   
+// type: The type of event that occurred (e.g., "click", "keydown").   
+// clientX, clientY: The coordinates of the mouse pointer relative to the browser window.   
+// pageX, pageY: The coordinates of the mouse pointer relative to the entire document.
+// keyCode, key: Information about the key pressed (for keyboard events).
+// preventDefault(): A method that prevents the browser's default action for the event (e.g., preventing a form from submitting when you click the submit button).
+// stopPropagation(): A method that stops the event from propagating (bubbling up or capturing down) further up or down the DOM tree.
+    console.log("event.target");
+    console.log("event.type");
+    event.preventDefault()
+    alert("Don't click the button! You clicked at "+event.pageX+","+event.pageY)
+})
+
+let hoverme = document.getElementById("hoverme");
+hoverme.addEventListener('mouseover', (event) => {
+    event.target.classList.toggle("xl")    
+});
+hoverme.addEventListener('mouseout', (event) => {
+    event.target.classList.toggle("xl")
+    alert("I TOLD YOU NOT TO HOVER!!!")
+});
+</script>
+</body>
+</html>
