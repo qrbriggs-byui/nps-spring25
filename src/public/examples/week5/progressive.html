@@ -5,97 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progressive Enhancement: Load More Example</title>
     <meta name="description" content="An example demonstrating progressive enhancement with a 'Load More' button.">
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .item-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .list-item {
-            background-color: #e9ecef;
-            border: 1px solid #dee2e6;
-            margin-bottom: 15px;
-            padding: 15px 20px;
-            border-radius: 5px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .list-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .list-item h2 {
-            margin-top: 0;
-            color: #34495e;
-            font-size: 1.3rem;
-        }
-
-        .list-item p {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 0;
-        }
-
-        .load-more-button {
-            display: block; /* Ensures button is on its own line */
-            width: fit-content; /* Adjusts width to content */
-            margin: 25px auto 0; /* Centers the button */
-            padding: 12px 25px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            text-align: center;
-            text-decoration: none; /* In case it's an anchor tag */
-        }
-
-        .load-more-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-1px);
-        }
-
-        .hidden-item {
-            /* This class is initially applied to items we want to hide by default */
-            display: none;
-        }
-
-        /*
-            Accessibility: Screen readers still announce hidden content,
-            but visual users don't see it until JavaScript loads it.
-            For complex cases, consider 'aria-hidden' or truly dynamic loading.
-        */
-
-    </style>
+    <link rel="stylesheet" href="progressive.css">
 </head>
 <body>
     <div class="container">
@@ -141,7 +51,7 @@
 
     <footer>
         <p style="text-align: center; margin-top: 50px; color: #777;">
-            &copy; 2025 Progressive Web Examples.
+            &copy; 2025 BYU-Idaho
         </p>
     </footer>
 
