@@ -1,0 +1,88 @@
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    #social-media-img{
+        max-width: 960px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .article-meta {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .article-meta a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 2rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .social-share {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      text-align: center;
+    }
+
+    .social-share a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #555;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .social-share a:hover {
+      color: #007bff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 3rem;
+      background-color: #333;
+      color: #fff;
+      font-size: 0.8rem;
+    }
