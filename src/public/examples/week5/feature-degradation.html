@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature Degradation: localStorage Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .fallback { color: #b00; }
+        .success { color: #080; }
+    </style>
+</head>
+<body>
+    <h1>Feature Degradation: localStorage Demo</h1>
+    <div id="status"></div>
+    <form id="demoForm">
+        <label for="demoInput">Enter something:</label>
+        <input type="text" id="demoInput" name="demoInput">
+        <button type="submit">Save</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        function supportsLocalStorage() {
+            try {
+                const testKey = '__test__';
+                localStorage.setItem(testKey, '1');
+                localStorage.removeItem(testKey);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        const status = document.getElementById('status');
+        const form = document.getElementById('demoForm');
+        const input = document.getElementById('demoInput');
+        const output = document.getElementById('output');
+        const storageKey = 'featureDegradationDemo';
+
+        if (supportsLocalStorage()) {
+            status.innerHTML = '<span class="success">localStorage is available. Your input will be saved for future visits.</span>';
+            // Load saved value if present
+            const saved = localStorage.getItem(storageKey);
+            if (saved) {
+                input.value = saved;
+                output.textContent = `Saved value: ${saved}`;
+            }
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                localStorage.setItem(storageKey, input.value);
+                output.textContent = `Saved value: ${input.value}`;
+            });
+        } else {
+            status.innerHTML = '<span class="fallback">localStorage is <strong>not</strong> available. Your input will not be saved after you leave this page.</span>';
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                output.textContent = `Value entered (not saved): ${input.value}`;
+            });
+        }
+    </script>
+</body>
+</html>

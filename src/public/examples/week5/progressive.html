@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Enhancement: Load More Example</title>
+    <meta name="description" content="An example demonstrating progressive enhancement with a 'Load More' button.">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .list-item {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .list-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .list-item h2 {
+            margin-top: 0;
+            color: #34495e;
+            font-size: 1.3rem;
+        }
+
+        .list-item p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .load-more-button {
+            display: block; /* Ensures button is on its own line */
+            width: fit-content; /* Adjusts width to content */
+            margin: 25px auto 0; /* Centers the button */
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            text-align: center;
+            text-decoration: none; /* In case it's an anchor tag */
+        }
+
+        .load-more-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .hidden-item {
+            /* This class is initially applied to items we want to hide by default */
+            display: none;
+        }
+
+        /*
+            Accessibility: Screen readers still announce hidden content,
+            but visual users don't see it until JavaScript loads it.
+            For complex cases, consider 'aria-hidden' or truly dynamic loading.
+        */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Latest Articles</h1>
+
+        <ul class="item-list" id="articleList">
+            <li class="list-item">
+                <h2>Article 1: Understanding Progressive Enhancement</h2>
+                <p>Delve into the core concepts of progressive enhancement and how it benefits web accessibility and performance.</p>
+            </li>
+            <li class="list-item">
+                <h2>Article 2: Modern CSS Techniques for Responsive Design</h2>
+                <p>Explore the latest CSS features to build fluid and adaptive user interfaces across all devices.</p>
+            </li>
+            <li class="list-item">
+                <h2>Article 3: JavaScript Best Practices for Interactive Web Apps</h2>
+                <p>Tips and tricks for writing clean, efficient, and maintainable JavaScript code for dynamic websites.</p>
+            </li>
+            <li class="list-item hidden-item">
+                <h2>Article 4: SEO Strategies for Small Businesses</h2>
+                <p>A beginner's guide to optimizing your website for search engines to increase organic traffic.</p>
+            </li>
+            <li class="list-item hidden-item">
+                <h2>Article 5: The Power of Web Components</h2>
+                <p>Discover how web components can help you build reusable UI widgets independent of any framework.</p>
+            </li>
+            <li class="list-item hidden-item">
+                <h2>Article 6: Accessibility Beyond the Basics</h2>
+                <p>Go deeper into web accessibility, understanding WCAG guidelines and practical implementation.</p>
+            </li>
+            <li class="list-item hidden-item">
+                <h2>Article 7: Mastering Front-End Performance Optimization</h2>
+                <p>Techniques to make your website load faster and feel more responsive to users.</p>
+            </li>
+            <li class="list-item hidden-item">
+                <h2>Article 8: Introduction to Serverless Functions</h2>
+                <p>Learn how serverless computing can simplify backend development and scale your applications.</p>
+            </li>
+        </ul>
+
+        <button id="loadMoreBtn" class="load-more-button hidden-item">Load More Articles</button>
+        </div>
+
+    <footer>
+        <p style="text-align: center; margin-top: 50px; color: #777;">
+            &copy; 2025 Progressive Web Examples.
+        </p>
+    </footer>
+
+    <script>
+        // Feature Detection: Check if necessary DOM APIs and JavaScript are available
+        if (document.getElementById && document.querySelector && document.querySelectorAll) {
+            const articleList = document.getElementById('articleList');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const hiddenItems = document.querySelectorAll('.list-item.hidden-item');
+            let itemsToShowPerClick = 2; // How many items to reveal at once
+            let currentIndex = 0; // Keep track of how many hidden items have been revealed
+
+            // 1. Reveal the "Load More" button (only if JS is enabled)
+            loadMoreBtn.classList.remove('hidden-item');
+
+            // 2. Hide all hidden items initially using JavaScript
+            //    (This overrides the CSS 'display: none' for the initial set)
+            //    No, this is redundant if CSS already hides them.
+            //    The 'hidden-item' class already handles initial hiding.
+            //    The JS's job is to *show* them progressively.
+
+            // Function to show the next batch of items
+            const showMoreItems = () => {
+                let itemsRevealedCount = 0;
+                for (let i = currentIndex; i < hiddenItems.length && itemsRevealedCount < itemsToShowPerClick; i++) {
+                    hiddenItems[i].classList.remove('hidden-item');
+                    itemsRevealedCount++;
+                }
+                currentIndex += itemsRevealedCount;
+
+                // If all hidden items are now visible, hide the button
+                if (currentIndex >= hiddenItems.length) {
+                    loadMoreBtn.style.display = 'none'; // Or loadMoreBtn.classList.add('hidden-item');
+                }
+            };
+
+            // Initially show the first batch if there are hidden items
+            // We want to show the first 2 hidden items if they exist
+            // No, the initial display of 3 items is handled by the HTML structure itself.
+            // The `hidden-item` class starts from Article 4.
+            // We only need to attach the event listener and then call showMoreItems for subsequent loads.
+
+            // Attach click event listener to the button
+            loadMoreBtn.addEventListener('click', showMoreItems);
+
+            // Important: Call showMoreItems once if you want to initially show some of the *hidden* items
+            // that were NOT initially visible in the HTML structure.
+            // In this example, the first 3 are visible, so we start showing from index 0 of `hiddenItems`
+            // when the button is clicked.
+
+        } else {
+            // No JavaScript detected or enabled.
+            // All items will remain visible due to CSS. The button will stay hidden.
+            console.log("JavaScript is not enabled. All items are visible by default.");
+        }
+    </script>
+</body>
+</html>
