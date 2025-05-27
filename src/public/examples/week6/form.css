@@ -1,0 +1,96 @@
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            font-size: 1rem;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:focus {
+            outline: 2px solid #0056b3;
+            outline-offset: 2px;
+        }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
+        }
+        .required::after {
+            content: " *";
+            color: red;
+            margin-left: 4px;
+        }
+        .form-instructions {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.85em;
+            margin-top: 5px;
+            display: none; /* Hidden by default, shown with JS */
+        }
+        /* Style for required fields that are invalid after submission attempts */
+        input:invalid:not(:placeholder-shown):not(:focus),
+        select:invalid:not(:focus) {
+            border-color: red;
+        }
+        #form-status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #e2f0d9;
+            color: #217b0d;
+            border: 1px solid #c2e0b5;
+            display: none; /* Hidden by default */
+        }
