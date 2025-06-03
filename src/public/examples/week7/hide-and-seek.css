@@ -1,0 +1,143 @@
+/* Custom styles for demonstration */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    padding: 2.5rem; /* p-10 */
+}
+
+.example-section {
+    border: 1px solid #e2e8f0; /* border-gray-200 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1.5rem; /* p-6 */
+    margin-bottom: 2rem; /* mb-8 */
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.example-content {
+    background-color: #bfdbfe; /* bg-blue-200 */
+    border: 1px solid #60a5fa; /* border-blue-400 */
+    padding: 1rem; /* p-4 */
+    margin-top: 1rem; /* mt-4 */
+    margin-bottom: 1rem; /* mb-4 */
+    border-radius: 0.5rem; /* rounded-md */
+    color: #1e40af; /* text-blue-800 */
+    font-weight: 600; /* font-semibold */
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it takes full width for demonstration */
+}
+
+.toggle-button {
+    /* @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out; */
+    background-color: #1e40af;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: #bfdbfe 2px 2px;
+    transition: background-color 300ms ease-in-out;
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+.toggle-button:hover{
+    background-color: #2d5efe;
+}
+
+/* --- CSS Hiding Techniques --- */
+
+/* 1. display: none; */
+.hidden-display {
+    display: none;
+}
+
+/* 2. visibility: hidden; */
+.hidden-visibility {
+    visibility: hidden;
+}
+
+/* 3. opacity: 0; */
+.hidden-opacity {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Add transition for smooth fade */
+}
+
+/* 4. position: absolute; (off-screen) */
+.hidden-offscreen {
+    position: absolute;
+    left: -9999px; /* Moves element far off-screen */
+    top: auto; /* Reset top to prevent issues */
+    width: 1px; /* Minimal width to prevent layout issues if somehow visible */
+    height: 1px; /* Minimal height */
+    overflow: hidden; /* Hide any potential overflow */
+}
+
+/* 5. width: 0; height: 0; (and overflow: hidden;) */
+.hidden-collapsed {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0; /* Ensure padding doesn't add size */
+    margin: 0; /* Ensure margin doesn't add size */
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, padding 0.5s ease-in-out; /* For smooth collapse/expand */
+}
+/* To make it visible again, set width/height to auto or specific values */
+.visible-collapsed {
+    width: 100%; /* Or a specific width like 200px */
+    height: auto; /* Or a specific height like 100px */
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* 6. .sr-only (Screen Reader Only / Visually Hidden) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* Legacy syntax, still widely supported */
+    white-space: nowrap; /* Prevents text wrap */
+    border: 0;
+}
+/* Modern alternative for clip for better browser compatibility */
+.sr-only:not(:focus):not(:active) {
+    clip-path: inset(50%);
+}
+
+/* Specific styles for the sr-only demo to show it's "there" */
+.sr-only-demo-box {
+    background-color: #fef3c7; /* bg-yellow-100 */
+    border: 1px solid #fcd34d; /* border-yellow-300 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #92400e; /* text-yellow-800 */
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative; /* For context of the sr-only text */
+    width: 100%;
+}
+.sr-only-demo-box p {
+    margin-bottom: 0.5rem;
+}

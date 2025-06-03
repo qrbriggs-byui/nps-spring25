@@ -1,0 +1,113 @@
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; /* Space between examples */
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        .example-section {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* --- Example 1: Simple Button Hover Effect --- */
+        .transition-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            /* Apply transition to background-color and color over 0.3 seconds */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .transition-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            color: #f8f9fa; /* Slightly off-white on hover */
+        }
+
+        /* --- Example 2: Expanding Box on Hover --- */
+        .expanding-box {
+            width: 150px;
+            height: 100px;
+            background-color: #28a745;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            margin: 20px auto; /* Centered margin */
+            border-radius: 8px;
+            /* Apply transition to width, height, and background-color */
+            transition: width 0.4s ease-out, height 0.4s ease-out, background-color 0.4s ease-out;
+        }
+
+        .expanding-box:hover {
+            width: 200px;
+            height: 150px;
+            background-color: #218838; /* Slightly darker green */
+        }
+
+        /* --- Example 3: Fading Image Opacity --- */
+        .fade-image {
+            width: 200px;
+            height: 200px;
+            opacity: 1; /* Fully opaque by default */
+            margin: 20px auto; /* Centered margin */
+            border-radius: 5px;
+            /* Transition for opacity over 0.5 seconds */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-image:hover {
+            opacity: 0.6; /* Partially transparent on hover */
+        }
+
+        /* --- Example 4: Animating a Menu Item Underline --- */
+        nav {
+            display: flex;
+            gap: 30px;
+            justify-content: center; /* Center the navigation links */
+            margin: 20px 0;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding-bottom: 5px;
+            position: relative; /* Needed for the pseudo-element */
+        }
+
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0; /* Initially no width */
+            height: 2px;
+            background-color: #007bff;
+            /* Transition the width */
+            transition: width 0.3s ease-out;
+        }
+
+        .menu-item:hover::after {
+            width: 100%; /* Expand to full width on hover */
+        }

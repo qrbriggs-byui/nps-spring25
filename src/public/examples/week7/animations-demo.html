@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations Demo</title>
+    <link rel="stylesheet" href="animations-demo.css">
+</head>
+<body>
+
+    <h1>CSS Animations Examples</h1>
+
+    <div class="example-section">
+        <h2>1. Continuous Animation: Pulsing Effect</h2>
+        <div class="animation-box pulse-box">Pulse!</div>
+        <p>This box continuously scales up slightly and emits a fading shadow, then returns to normal. It's a common effect for drawing attention.</p>
+    </div>
+
+    <div class="example-section">
+        <h2>2. Non-Continuous Animation: Entry Fade & Slide</h2>
+        <p class="entry-text">This text fades in and slides up smoothly when the page loads, and then stops. Notice the delay and `forwards` fill mode.</p>
+        <p><i>Refresh the page to see this animation again.</i></p>
+    </div>
+
+    <div class="example-section">
+        <h2>3. Animation with Multiple Keyframes: Bounce Effect</h2>
+        <div class="animation-box bounce-box">Bounce!</div>
+        <p>This box demonstrates a classic "bounce" effect using multiple keyframes to simulate a realistic up-and-down motion.</p>
+    </div>
+
+    <div class="example-section">
+        <h2>4. CSS Sprite Animation (Steps)</h2>
+        <div class="sprite-container walking"></div>
+        <p>This animation uses a sprite sheet and `steps()` to create a frame-by-frame walking animation. It cycles through 10 frames.</p>
+        <p><i>(Note: A real sprite sheet image is linked from an external source.)</i></p>
+    </div>
+
+    <div class="example-section">
+        <h2>5. Loading Spinner (Rotation)</h2>
+        <div class="spinner"></div>
+        <p>A classic loading spinner created using `border-radius: 50%` and a simple `rotate` animation, useful for indicating background processes.</p>
+    </div>
+
+    <div class="example-section">
+        <h2>6. Text Typing Effect (Steps & Multiple Animations)</h2>
+        <div class="typing-container">
+            <span>Hello, CSS Animations!</span>
+        </div>
+        <p>This effect simulates text being typed out, along with a blinking cursor. It combines two animations: one for `width` (using `steps`) and one for `border-color`.</p>
+    </div>
+
+    <div class="example-section pulsing-bg-section" style="box-shadow: none;">
+        <h2>7. Pulsing Background for a Section</h2>
+        <p style="color: #333; margin-top: 10px;">This entire section has a subtle, continuous background color pulse. Notice how `alternate` makes the animation go back and forth.</p>
+    </div>
+
+</body>
+</html>

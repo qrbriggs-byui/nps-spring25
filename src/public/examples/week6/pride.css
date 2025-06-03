@@ -1,0 +1,45 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;    
+    background-color:antiquewhite;
+}
+
+main{
+    width: 800px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    height: 100vw;
+    padding: 1rem;    
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); /* Fade out shadow */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+button{
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    font-size: 1.5rem;    
+    animation: pulse 2s infinite ease-in-out;    
+}
+
+li{
+    margin-top: .3rem;
+}
+
+h1, .button-container{
+    text-align: center;
+}

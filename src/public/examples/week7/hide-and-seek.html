@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Hiding Techniques Demo</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="hide-and-seek.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">CSS Hiding Techniques Demo</h1>
+        <p class="text-center text-gray-600 mb-10">Explore different ways to hide elements with CSS and understand their impact on layout, interaction, and accessibility.</p>
+
+        <div class="example-section">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">1. `display: none;`</h2>
+            <p class="text-gray-600 mb-4">Completely removes the element from the document flow. It takes up no space and is not accessible to screen readers.</p>
+            <div id="displayNoneBox" class="example-content">
+                This box is hidden with `display: none;`
+            </div>
+            <button class="toggle-button" onclick="toggleDisplay('displayNoneBox')">Toggle `display: none;`</button>
+            <p class="text-sm text-gray-500 mt-2">When hidden, the button below will move up to fill the space.</p>
+            <div class="example-content bg-gray-100 text-gray-600 border-gray-300">
+                This box is below the toggled box.
+            </div>
+        </div>
+
+        <div class="example-section">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">2. `visibility: hidden;`</h2>
+            <p class="text-gray-600 mb-4">Makes the element invisible, but it still occupies its original space in the document flow. It is accessible to screen readers.</p>
+            <div id="visibilityHiddenBox" class="example-content">
+                This box is hidden with `visibility: hidden;`
+            </div>
+            <button class="toggle-button" onclick="toggleVisibility('visibilityHiddenBox')">Toggle `visibility: hidden;`</button>
+            <p class="text-sm text-gray-500 mt-2">When hidden, the button below will NOT move up.</p>
+            <div class="example-content bg-gray-100 text-gray-600 border-gray-300">
+                This box is below the toggled box.
+            </div>
+        </div>
+
+        <div class="example-section">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">3. `opacity: 0;`</h2>
+            <p class="text-gray-600 mb-4">Makes the element completely transparent. It still occupies space and is clickable/focusable. Great for fade effects!</p>
+            <div id="opacityZeroBox" class="example-content bg-green-200 text-green-800 border-green-400">
+                This box is hidden with `opacity: 0;` (try clicking it when invisible!)
+            </div>
+            <button class="toggle-button" onclick="toggleOpacity('opacityZeroBox')">Toggle `opacity: 0;`</button>
+            <p class="text-sm text-gray-500 mt-2">When hidden, the button below will NOT move up. The box is still clickable!</p>
+            <div class="example-content bg-gray-100 text-gray-600 border-gray-300">
+                This box is below the toggled box.
+            </div>
+        </div>
+
+        <div class="example-section">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">4. `position: absolute;` (Off-screen)</h2>
+            <p class="text-gray-600 mb-4">Removes the element from the normal document flow and moves it far off-screen. It takes up no space in the layout.</p>
+            <div id="offscreenBox" class="example-content bg-purple-200 text-purple-800 border-purple-400">
+                This box is hidden by moving off-screen.
+            </div>
+            <button class="toggle-button" onclick="toggleOffscreen('offscreenBox')">Toggle `position: absolute;`</button>
+            <p class="text-sm text-gray-500 mt-2">When hidden, the button below will move up. The box is still technically in the DOM.</p>
+            <div class="example-content bg-gray-100 text-gray-600 border-gray-300">
+                This box is below the toggled box.
+            </div>
+        </div>
+
+        <div class="example-section">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">5. `width: 0; height: 0;` (`overflow: hidden;`)</h2>
+            <p class="text-gray-600 mb-4">Collapses the element's dimensions to zero, effectively hiding its content. Great for collapsible sections.</p>
+            <div id="collapsedBox" class="example-content bg-orange-200 text-orange-800 border-orange-400 visible-collapsed">
+                This box is hidden by collapsing its dimensions.
+            </div>
+            <button class="toggle-button" onclick="toggleCollapsed('collapsedBox')">Toggle Collapse</button>
+            <p class="text-sm text-gray-500 mt-2">When hidden, the box below will move up. This method allows for smooth expand/collapse animations.</p>
+            <div class="example-content bg-gray-100 text-gray-600 border-gray-300">
+                This box is below the toggled box.
+            </div>
+        </div>
+
+        <div class="example-section">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">6. `.sr-only` (Screen Reader Only / Visually Hidden)</h2>
+            <p class="text-gray-600 mb-4">Visually hides content while keeping it fully accessible to screen readers. Crucial for accessibility.</p>
+            <div class="sr-only-demo-box">
+                <p>This box contains text that is *visually* hidden but still accessible to screen readers.</p>
+                <span class="sr-only">This text is hidden visually but a screen reader would announce it. This is useful for providing context to assistive technologies without cluttering the visual design.</span>
+                <p>Try inspecting this element with developer tools or using a screen reader to confirm its presence.</p>
+            </div>
+            <p class="text-sm text-gray-500 mt-2">This technique is not meant for toggling visibility, but for permanent visual hiding with accessibility in mind.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript functions to toggle classes for demonstration
+        function toggleDisplay(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden-display');
+        }
+
+        function toggleVisibility(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden-visibility');
+        }
+
+        function toggleOpacity(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden-opacity');
+        }
+
+        function toggleOffscreen(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden-offscreen');
+        }
+
+        function toggleCollapsed(id) {
+            const element = document.getElementById(id);
+            // Toggle both classes to ensure smooth transition
+            element.classList.toggle('hidden-collapsed');
+            element.classList.toggle('visible-collapsed');
+        }
+    </script>
+</body>
+</html>
