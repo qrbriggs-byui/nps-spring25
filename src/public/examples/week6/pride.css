@@ -43,3 +43,7 @@ li{
 h1, .button-container{
     text-align: center;
 }
+
+.hide{
+    display: none;
+}

@@ -17,7 +17,7 @@ function checkForQuotes() {
         const quotes = JSON.parse(storedQuotes);
         displayQuotes(quotes);
         console.log("Loaded quotes from localStorage.");
-        document.getElementById("quotes-button").style.display = "none"
+        document.getElementById("quotes-button").classList.add("hide")
     }
 }
 
@@ -51,7 +51,7 @@ async function loadQuotes() {
         console.log("Fetched quotes from API and saved to localStorage.");
 
         // Hide button
-        document.getElementById("quotes-button").style.display = "none"
+        document.getElementById("quotes-button").classList.add("hide")
     } catch (error) {
         console.error("Error:", error);
     }
