@@ -66,6 +66,7 @@ function addUsername(e) {
     const name = document.getElementById("username").value;
     document.querySelector(".user").innerText = name;
     localStorage.setItem("list-user", name)
+    console.log(e)
 }
 
 function setUsername() {
