@@ -35,7 +35,7 @@
             cursor: pointer;
             font-size: 16px;
             /* Apply transition to background-color and color over 0.3 seconds */
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 1s ease, color 1s ease;
         }
 
         .transition-button:hover {
@@ -56,7 +56,7 @@
             margin: 20px auto; /* Centered margin */
             border-radius: 8px;
             /* Apply transition to width, height, and background-color */
-            transition: width 0.4s ease-out, height 0.4s ease-out, background-color 0.4s ease-out;
+            transition: width 0.2s ease-out, height 0.4s ease-out, background-color 0.2s ease-out;
         }
 
         .expanding-box:hover {
