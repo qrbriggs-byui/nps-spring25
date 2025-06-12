@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Practice</title>
+    <style>
+        .modal-container{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            background-color: beige;
+            /* opacity: 50%; */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .modal-content{
+            height: 200px;
+            width: 400px;
+            margin: 200px auto;
+            background-color: rgb(240 248 255 / 1);               
+            border: 5px black solid;   
+            text-align: center;                 
+        }
+
+        .hide-modal{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="normal-content">
+        <h1>Modal Practice</h1>
+        <h2>Section 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium deleniti debitis eos nemo, aliquid
+            libero exercitationem iure fuga impedit ea cum odio nobis odit molestias, modi eaque adipisci doloribus
+            nulla delectus esse ipsum. Eveniet nihil illum inventore quos voluptatum eum.</p>
+        <h2>Section 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta adipisci aliquam exercitationem ducimus totam
+            ea illo esse harum, ullam ipsam earum alias minima saepe sit magni facere necessitatibus voluptate!
+            Aspernatur?</p>
+        <h2>Section 3</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore hic molestias excepturi. Architecto
+            expedita fugit quia provident, voluptatem distinctio nostrum.</p>
+        <button id="message">Click here for a VERY IMPORTANT MESSAGE!</button>
+    </div>
+    <div class="modal-container hide-modal" aria-hidden="true">
+        <div class="modal-content">
+            <h3>Very Important Message</h3>
+            <p>The church is true!</p>
+            <button id="dismiss">You're Right!</button>
+        </div>
+    </div>
+<script>
+    document.getElementById("message").addEventListener("click", () => {
+        document.querySelector(".modal-container").classList.remove("hide-modal")
+        document.querySelector(".modal-container").setAttribute("aria-hidden","false")
+    })
+
+    document.getElementById("dismiss").addEventListener("click", () => {
+        document.querySelector(".modal-container").classList.add("hide-modal")
+        document.querySelector(".modal-container").setAttribute("aria-hidden","true")
+    })
+
+    document.addEventListener("keydown", (event) => {
+        console.log(event)
+        if (event.key === "Escape"){
+            document.querySelector(".modal-container").classList.add("hide-modal")
+            document.querySelector(".modal-container").setAttribute("aria-hidden","true")
+        }
+    })
+
+    document.querySelector(".modal-container").addEventListener("click", () => {        
+        if (event.target == document.querySelector(".modal-container")){
+            document.querySelector(".modal-container").classList.add("hide-modal")
+            document.querySelector(".modal-container").setAttribute("aria-hidden","true")
+        }
+        
+    })
+
+</script>
+</body>
+
+</html>

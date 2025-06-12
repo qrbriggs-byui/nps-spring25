@@ -61,7 +61,7 @@
     "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.15),
+    rgb(255 255 255 / 15%),
     rgba(255, 255, 255, 0)
   );
   --bs-body-font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -237,6 +237,7 @@ body > header > section.global-header > div > a{
 .park-header-subtitle p{
   font-size: 1.25rem;  
 }
+
 .park-nav{
   width: 100%;
   justify-items: center;

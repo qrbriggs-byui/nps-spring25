@@ -62,11 +62,10 @@ function manageTasks(e) {
     storeTaskList(tasks)
 }
 
-function addUsername(e) {
+function addUsername() {
     const name = document.getElementById("username").value;
     document.querySelector(".user").innerText = name;
-    localStorage.setItem("list-user", name)
-    console.log(e)
+    localStorage.setItem("list-user", name)    
 }
 
 function setUsername() {

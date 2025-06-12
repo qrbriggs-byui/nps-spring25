@@ -29,9 +29,9 @@ async function loadQuotes() {
     try {
         const response = await fetch("quotes.json", {
             headers: {
-                "I-NUMBER": I_NUMBER
+                "I-NUMBER": I_NUMBER,
             }
-        });
+        });     
 
         if (!response.ok) {
             throw new Error("Unauthorized or error fetching data");
@@ -39,6 +39,7 @@ async function loadQuotes() {
 
         const data = await response.json();
         const prideBook = data.books.find(book => book.title === "Pride and Prejudice");
+        // const prideBook = data.books[0];
         if (!prideBook) {
             throw new Error("Book not found");
         }
