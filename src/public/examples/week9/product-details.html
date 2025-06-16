@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <script type="module" src="product-details.js" defer></script>
+    <link rel="stylesheet" href="product-details.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Product Details</h1>
+        <section class="product-section">
+            <h2 id="product-title">Product Title</h2>
+            <p class="product-image-wrapper">
+                <img id="product-image" src="https://via.placeholder.com/400x300?text=Product+Image" alt="Product Title">
+            </p>
+            <p id="product-description" class="product-description">Product Description</p>
+            <p class="product-price">$<span id="product-price">0.00</span></p>
+            <button class="add-to-cart-button">Add to Cart</button>
+        </section>
+    </div>
+
+    <div class="overlay-container" aria-hidden="false">
+        <div class="overlay-contents">
+            <h1>Important message</h1>
+            <p>Sign up today for dental deals through our e-mail list!</p>
+            <input type="email" id="sign-up-email" placeholder="Enter your email...">
+            <button class="signup-button">Sign Up Now!</button>
+        </div>
+    </div>
+</body>
+
+</html>

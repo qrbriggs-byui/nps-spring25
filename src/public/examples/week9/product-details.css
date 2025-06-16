@@ -1,0 +1,202 @@
+/* --- Color Palette from Coolors.co --- */
+:root {
+    --color-red: #AC3931; /* Dark Red */
+    --color-yellow: #E5D352; /* Mellow Yellow */
+    --color-light-green: #D9E76C; /* Lime Green */
+    --color-blue-gray: #537D8D; /* Steel Blue/Gray */
+    --color-dark-purple: #482C3D; /* Deep Plum/Dark Purple */
+    --color-white: #fff;
+    --color-light-gray: #f4f4f4;
+    --color-dark-text: #333;
+}
+
+/* --- Base Body Styles (Consistent with previous pages) --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-blue-gray);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    color: var(--color-dark-text);
+}
+
+/* --- Main Content Container (Consistent with previous pages) --- */
+.container {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    max-width: 800px; /* Adjust max-width as needed for product details */
+    width: 100%;
+    text-align: center; /* Center main headings and button */
+}
+
+/* --- Headings (Consistent with previous pages) --- */
+h1 {
+    font-size: 3em;
+    color: var(--color-dark-purple);
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-yellow);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- Product Details Section Styling --- */
+.product-section {
+    text-align: left; /* Align product details left */
+    margin-top: 30px;
+}
+
+.product-section h2 { /* Product Title */
+    font-size: 2.5em; /* Slightly larger for product title */
+    color: var(--color-red);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-light-green); /* Subtle accent border */
+    padding-bottom: 8px;
+}
+
+.product-image-wrapper {
+    text-align: center; /* Center the image within its paragraph */
+    margin-bottom: 25px;
+}
+
+.product-image-wrapper img {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for image */
+    border: 2px solid var(--color-blue-gray); /* Frame the image */
+}
+
+.product-description {
+    font-size: 1.15em;
+    line-height: 1.6;
+    color: var(--color-dark-text);
+    margin-bottom: 25px;
+}
+
+.product-price {
+    font-size: 2em; /* Larger price text */
+    font-weight: bold;
+    color: var(--color-dark-purple); /* Stand out price color */
+    margin-bottom: 30px;
+}
+
+.product-price span {
+    color: var(--color-red); /* Accent color for the actual price number */
+}
+
+/* --- Add to Cart Button --- */
+.add-to-cart-button {
+    background-color: var(--color-yellow); /* Bright accent color for the button */
+    color: var(--color-dark-purple); /* Dark text on bright button */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--color-light-green); /* Change color on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Overlay Styling --- */
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; /* Make it visible by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-contents {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    text-align: center;
+
+    /* Fixed dimensions for the overlay contents */
+    width: 400px;
+    height: 300px;
+
+    /* Ensure padding is included in the dimensions */
+    box-sizing: border-box; 
+    display: flex; /* Use flexbox for internal centering */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Initial state for the animation - visible by default now */
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.overlay-contents h1 {
+    font-size: 2.2em; /* Slightly smaller for overlay title */
+    color: var(--color-dark-purple);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-red);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.overlay-contents p {
+    font-size: 1em; /* Slightly smaller text */
+    color: var(--color-dark-text);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+#sign-up-email {
+    width: calc(100% - 40px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-blue-gray);
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+#sign-up-email:focus {
+    outline: none;
+    border-color: var(--color-yellow);
+    box-shadow: 0 0 8px rgb(229 211 82 / 50%);
+}
+
+.signup-button {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em; /* Slightly smaller font for button */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+}
+
+.signup-button:hover {
+    background-color: var(--color-dark-purple);
+}
+
+.hide-overlay{
+    display: none;
+}

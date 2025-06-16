@@ -1,0 +1,89 @@
+/* Define your color palette as CSS variables for easy use */
+:root {
+    --color-red: #AC3931; /* Dark Red */
+    --color-yellow: #E5D352; /* Mellow Yellow */
+    --color-light-green: #D9E76C; /* Lime Green */
+    --color-blue-gray: #537D8D; /* Steel Blue/Gray */
+    --color-dark-purple: #482C3D; /* Deep Plum/Dark Purple */
+    --color-white: #fff;
+    --color-light-gray: #f4f4f4;
+    --color-dark-text: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
+    background-color: var(--color-blue-gray); /* Dominant background color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    min-height: 100vh;
+    padding: 40px 20px; /* Add padding around the main content */
+    box-sizing: border-box;
+    color: var(--color-dark-text);
+}
+
+div { /* This targets the main content container */
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    padding: 40px;
+    max-width: 800px; /* Max width for readability */
+    width: 100%;
+    text-align: center; /* Center main headings */
+}
+
+h1 {
+    font-size: 3em; /* Larger heading */
+    color: var(--color-dark-purple); /* Primary heading color */
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-yellow); /* Underline with accent color */
+    padding-bottom: 10px;
+    display: inline-block; /* Makes border-bottom fit text width */
+}
+
+h2 {
+    font-size: 1.8em;
+    color: var(--color-red); /* Secondary heading color */
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align list items to the left */
+}
+
+ul li {
+    background-color: var(--color-light-gray); /* Light background for list items */
+    border: 1px solid var(--color-blue-gray); /* Subtle border */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out content within list items */
+    font-size: 1.1em;
+    color: var(--color-dark-text);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+ul li:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for when products are not yet available */
+ul li:first-child:last-child { /* Targets the "Products not yet available..." li */
+    font-style: italic;
+    color: var(--color-blue-gray);
+    background-color: var(--color-white); /* Revert background for this special message */
+    border: 1px dashed var(--color-light-green); /* Dashed border for placeholder */
+    padding: 20px;
+    justify-content: center; /* Center the text */
+    text-align: center;
+    box-shadow: none;
+    transform: none; /* No hover effect on placeholder */
+}

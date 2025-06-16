@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>URL Examples</title>
+    <link rel="stylesheet" href="url-example.css">
+</head>
+<body>
+    <div class="container">
+        <h1>URL Parameters Example</h1>
+
+        <h2>Identifier Passed In</h2>
+        <p id="identifier">No ID found in URL parameters.</p>
+        <hr>
+
+        <h2>List of Parameters Passed In</h2>
+        <ol id="param-list">
+            <li>No 'list' parameters found.</li>
+        </ol>
+        <hr>
+
+        <h2>Enumeration of all parameters</h2>
+        <ul id="all-params">
+            <li>No parameters found.</li>
+        </ul>
+    </div>
+<script>
+    let url = new URL(window.location.href); // Parses the WHOLE URL
+    let params = new URLSearchParams(window.location.search); // Parses just the stuff after the ?
+
+    // Get a single ID from the search params
+    let myid = params.get("id");
+    if (myid) {
+        document.getElementById("identifier").innerText = myid;
+    } 
+
+    // Gets all values when more than one is present
+    let mylist = params.getAll("list");
+    if (mylist && mylist.length > 0) { // Check if array is not empty
+        let myhtml = "";
+        mylist.forEach((item) => {
+            myhtml = myhtml + "<li>" + item + "</li>";
+        });
+        document.getElementById("param-list").innerHTML = myhtml;
+    } 
+
+    // Gets all the keys from the search params so you can iterate over them
+    let allKeys = params.keys();
+    let hasKeys = false;
+    let myhtmlAllParams = ""; // Use a different variable name for clarity
+    for (let key of allKeys) { // Iterate over keys correctly
+        hasKeys = true;
+        myhtmlAllParams += "<li><strong>" + key + "</strong>: " + params.getAll(key) + "</li>";
+    }
+
+    if (hasKeys) {
+        document.getElementById("all-params").innerHTML = myhtmlAllParams;
+    } 
+
+
+</script>
+</body>
+</html>

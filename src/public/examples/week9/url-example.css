@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Changed to column for vertical layout */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+    width: 100%;
+    max-width: 600px; /* Wider container for content */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space between sections */
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.2em; /* Larger main title */
+}
+
+h2 {
+    color: #007bff; /* Use primary color for subheadings */
+    margin-top: 30px; /* Space above subheadings */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
+    padding: 10px;
+    background-color: #e9f7ff; /* Light blue background for specific value */
+    border-left: 5px solid #007bff; /* Accent border */
+    border-radius: 4px;
+    word-wrap: break-word; /* Ensure long URLs/values wrap */
+}
+
+ol,
+ul {
+    list-style-position: inside; /* Keep list markers inside padding */
+    padding-left: 20px; /* Indent lists slightly */
+    color: #555;
+}
+
+li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0; /* More vertical space for HR */
+}

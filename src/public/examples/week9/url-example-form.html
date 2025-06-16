@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Example</title>
+    <link rel="stylesheet" href="url-example-form.css">
+</head>
+<body>
+    <form action="url-example.html">
+        <h2>URL Search Params Example</h2>
+        <div class="range-container">
+            <label for="id">Select a Value: <span id="rangeValue">50</span></label>
+            <input name="id" id="id" type="range" min="0" max="100" value="50">
+        </div>
+        <hr>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="list" value="Arthur">Arthur</label>
+            <label><input type="checkbox" name="list" value="Beatrice">Beatrice</label>
+            <label><input type="checkbox" name="list" value="Caleb">Caleb</label>
+            <label><input type="checkbox" name="list" value="Delilah">Delilah</label>
+            <label><input type="checkbox" name="list" value="Ethan">Ethan</label>
+            <label><input type="checkbox" name="list" value="Fiona">Fiona</label>
+        </div>
+        <hr>
+        Your Quote Here: <input type="input" name="quote">
+        <hr>
+        <button>Go Team!</button>
+    </form>
+
+    <script>
+        // Get references to the range input and the span for displaying the value
+        const rangeInput = document.getElementById('id');
+        const rangeValueSpan = document.getElementById('rangeValue');
+
+        // Set the initial value display
+        rangeValueSpan.textContent = rangeInput.value;
+
+        // Add an event listener to update the span whenever the range input changes
+        rangeInput.addEventListener('input', () => {
+            rangeValueSpan.textContent = rangeInput.value;
+        });
+    </script>
+</body>
+</html>
