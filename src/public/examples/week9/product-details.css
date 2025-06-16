@@ -132,7 +132,7 @@ h1 {
     text-align: center;
 
     /* Fixed dimensions for the overlay contents */
-    width: 400px;
+    width: 600px;
     height: 300px;
 
     /* Ensure padding is included in the dimensions */
