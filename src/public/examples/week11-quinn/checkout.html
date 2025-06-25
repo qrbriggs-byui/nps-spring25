@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dental Care Store - Checkout</title>
+    <script type="module" src="checkout.js" defer></script>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+    <main>
+        <h1>The Dental Care Store</h1>
+        <section class="cart-items">
+            <h2>Items in Cart:</h2>
+            <ul id="cart-list">
+                <li>Loading cart...</li>
+            </ul>
+        </section>
+        <hr>
+        <form id="dental-form" action="order-confirmation.html" method="GET">
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="first-name">First Name</label>
+                <input name="first-name" id="first-name" required>
+                <span id="first-name-error"></span>
+
+                <label for="first-name">Last Name</label>
+                <input name="last-name" id="last-name" required>
+                <span id="last-name-error"></span>
+
+                <label for="street-address">Street Address</label>
+                <input name="street-address" id="street-address" maxlength="30" required>
+                <span id="street-address-error"></span>
+
+                <label for="city">City</label>
+                <input name="city" id="city" maxlength="30" required>
+                <span id="city-error"></span>
+
+                <label for="state">State</label>
+                <input name="state" id="state" required>
+                <span id="state-error"></span>
+
+                <label for="zip">Zip</label>
+                <input name="zip" id="zip" required>
+                <span id="zip-error"></span>
+            </fieldset>
+            <fieldset>
+                <legend>Payment Information</legend>
+                <label for="card-number">Credit Card Number</label>
+                <input name="card-number" id="card-number" required>
+                <span id="card-number-error"></span>
+
+                <label for="expiration">Expiration (MM/YY)</label>
+                <input name="expiration" id="expiration" placeholder="12/25" required>
+                <span id="expiration-error"></span>
+            </fieldset>
+            <p id="place-order-container"><button>Place Order</button></p>
+        </form>
+        <script>
+
+        </script>
+    </main>
+</body>
+
+</html>

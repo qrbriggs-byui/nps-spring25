@@ -1,0 +1,66 @@
+/* order-confirmation.css */
+@import url('base.css'); /* Import shared styles */
+
+/* --- Thank You Message Section --- */
+.thank-you-message {
+    background-color: var(--color-light-green); /* Positive accent background */
+    color: var(--color-dark-purple);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.thank-you-message p {
+    margin: 10px 0;
+}
+
+#customer-name {
+    color: var(--color-red); /* Highlight customer name */
+}
+
+/* --- Payment Summary Section (Specific adjustments from base) --- */
+.payment-summary {
+    padding-right: 15px; /* Indent slightly for visual balance */
+}
+
+.total-charged-value {
+    font-size: 2.5em; /* Larger to emphasize total */
+    margin: 0 0 15px 0; /* Adjust margin specific to this page */
+}
+
+.card-details {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
+
+#last-four-digits {
+    font-weight: bold;
+    color: var(--color-dark-purple);
+}
+
+/* --- Actions Section --- */
+.actions {
+    margin-top: 30px;
+    text-align: center;    
+}
+
+.continue-shopping-button {
+    background-color: var(--color-blue-gray);
+    color: var(--color-white);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.continue-shopping-button:hover {
+    background-color: #436a7a;
+    transform: translateY(-2px);
+}

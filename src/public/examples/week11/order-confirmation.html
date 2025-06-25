@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="order-confirmation.css">
+    <script type="module" src="order-confirmation.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmation</h1>
+
+        <section class="thank-you-message">
+            <p>Thank you for your order, <span id="customer-name"></span>!</p>
+            <p>Your order has been successfully placed.</p>
+        </section>
+
+        <hr>
+
+        <section class="confirmed-items">
+            <h2>Order Details:</h2>
+            <ul id="confirmed-cart-list">
+                <!-- Confirmed cart items will be loaded here by JavaScript -->
+                <li>Loading order details...</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="payment-summary">
+            <p class="total-charged-label">Total Charged:</p>
+            <p class="total-charged-value">$<span id="total-charged">0.00</span></p>
+            <p class="card-details">Charged to card ending in: <span id="last-four-digits">XXXX</span></p>
+        </section>
+    </div>
+</body>
+</html>

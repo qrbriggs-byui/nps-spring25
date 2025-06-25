@@ -1,0 +1,97 @@
+/* checkout.css */
+@import url('base.css'); /* Import shared styles */
+
+/* --- Form Styling --- */
+form {
+    text-align: left; /* Align form elements left */
+    margin-top: 30px;
+}
+
+fieldset {
+    border: 2px solid var(--color-blue-gray);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: var(--color-white); /* Ensure fieldset background is white */
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-red);
+    padding: 0 10px;
+    margin-left: -10px; /* Adjust legend position */
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-dark-purple);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"] {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: border-color 0.2s ease-in-out;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: var(--color-yellow);
+    outline: none;
+    box-shadow: 0 0 5px rgba(229, 211, 82, 0.5);
+}
+
+.error-message {
+    color: var(--color-error);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block; /* Ensure error messages are on their own line */
+}
+
+/* Specific styling for expiration date inputs */
+.expiration-group .expiration-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.expiration-group .expiration-inputs input {
+    width: 80px; /* Fixed width for month/year */
+    text-align: center;
+}
+
+/* Place Order Button */
+.place-order-button {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-purple);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: auto; /* Allow button to size to its content */
+    margin: 0 auto; 
+    display: block; /* Make it a block element to center with auto margins */
+}
+
+.place-order-button:hover {
+    background-color: var(--color-light-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dental Care Store - Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <script type="module" src="checkout.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>The Dental Care Store</h1>        
+
+        <section class="cart-items">
+            <h2>Items in Cart:</h2>
+            <ul id="cart-list">
+                <!-- Cart items will be loaded here by JavaScript -->
+                <li>Loading cart...</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="cart-summary">
+            <p class="cart-total-label">Cart Total:</p>
+            <p class="cart-total-value">$<span id="cart-total">0.00</span></p>
+        </section>
+
+        <hr>
+
+        <form id="checkout-form" action="order-confirmation.html" method="GET" novalidate>
+            <fieldset>
+                <legend>Customer Information</legend>
+
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message" id="firstName-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message" id="lastName-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="streetAddress">Street Address:</label>
+                    <input type="text" id="streetAddress" name="streetAddress" required maxlength="30">
+                    <span class="error-message" id="streetAddress-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                    <span class="error-message" id="city-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required maxlength="2" placeholder="e.g., NY">
+                    <span class="error-message" id="state-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" name="zip" required pattern="\d{5}" title="Zip code must be 5 digits">
+                    <span class="error-message" id="zip-error"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Payment</legend>
+
+                <div class="form-group">
+                    <label for="cardNumber">Credit Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" placeholder="XXXX XXXX XXXX XXXX">
+                    <span class="error-message" id="cardNumber-error"></span>
+                </div>
+
+                <div class="form-group expiration-group">
+                    <label for="expMonth">Expiration Date:</label>
+                    <div class="expiration-inputs">
+                        <input type="number" id="expMonth" name="expMonth" required min="1" max="12" placeholder="MM" autocomplete="cc-exp-month">
+                        <span> / </span>
+                        <input type="number" id="expYear" name="expYear" required min="2023" placeholder="YYYY" autocomplete="cc-exp-year">
+                    </div>
+                    <span class="error-message" id="expDate-error"></span>
+                </div>
+            </fieldset>
+
+            <!-- Hidden input for cart data -->
+            <input type="hidden" name="cart" id="hidden-cart-data">
+
+            <button type="submit" class="place-order-button">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>
