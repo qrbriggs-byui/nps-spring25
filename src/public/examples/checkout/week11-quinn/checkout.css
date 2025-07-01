@@ -91,3 +91,7 @@ button:hover{
     background-color: lavender;
     color: black;
 }
+
+#zip{
+    display: inline;
+}

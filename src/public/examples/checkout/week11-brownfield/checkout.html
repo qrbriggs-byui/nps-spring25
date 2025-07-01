@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dental Care Store - Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <script type="module" src="checkout.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>The Dental Care Store</h1>        
+
+        <section class="cart-items">
+            <h2>Items in Cart:</h2>
+            <ul id="cart-list">
+                <!-- Cart items will be loaded here by JavaScript -->
+                <li>Loading cart...</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="cart-summary">
+            <p class="cart-total-label">Cart Total:</p>
+            <p class="cart-total-value">$<span id="cart-total">0.00</span></p>
+        </section>
+
+        <hr>
+
+        <form id="checkout-form" action="order-confirmation.html" method="GET" novalidate>
+            <!-- 
+                Fill in your form here. 
+                The novalidate attribute means all validation must happen in JavaScript
+             -->
+        </form>
+    </div>
+</body>
+</html>

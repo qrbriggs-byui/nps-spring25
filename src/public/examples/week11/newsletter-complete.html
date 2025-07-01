@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up for my Newsletter!</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .error-list {
+            background-color: beige;
+            color: crimson;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            display: block;
+        }
+
+        form {
+            border: 2px solid black;
+            padding: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        fieldset {
+            margin: 1rem;
+        }
+
+        input {
+            padding: .5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        button {
+            color: red;
+            background-color: lightblue;
+            margin: .5rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sign up for my Tech Newsletter</h1>
+    <form action="sign-up-complete.html" method="get">
+        <ul id="error-list" class="hidden"></ul>
+        <fieldset>
+            <legend>Important Information</legend>
+            <label>Full Name
+                <input id="full-name" name="full-name" required maxlength="30" pattern="[Kk].*"
+                    title="Your name should start with a K, you animal!">
+            </label>
+
+            <label>
+                E-mail Address
+                <input id="email" name="email" type="email" required maxlength="25">
+            </label>
+
+            <label>
+                Years of Experience (optional)
+                <input type="number" min="0" max="99" id="years-of-experience" name="years-of-experience">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Returning Users</legend>
+            <label>
+                Password
+                <input type="password" name="password" id="password">
+            </label>
+        </fieldset>
+        <p><button>Join the Newsletter!</button></p>
+    </form>
+    <script>
+        let form = document.querySelector("form").addEventListener("submit", (event) => {
+            let password = document.getElementById("password");
+            let value = password.value;
+            let errors = document.getElementById("error-list");
+            errors.innerHTML = "";
+
+            let tester = /[\W]+/
+            if (!value){
+                let errorItem = document.createElement("li");
+                errorItem.innerText = "Password must not be blank."
+                errors.appendChild(errorItem)
+                errors.classList.remove("hidden");
+                event.preventDefault();                
+            }
+            else if (!tester.test(value)) {
+                let errorItem = document.createElement("li");
+                errorItem.innerText = "Password must have at least one special character"
+                errors.appendChild(errorItem)
+                errors.classList.remove("hidden");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
