@@ -16,7 +16,7 @@
 <body>
     <h1>Sign up for my newsletter!</h1>
     <hr>
-    <form action="#" method="get">
+    <form id="newsletter-form" action="#" method="get">
         <!--
         Full Name: required
         Starts with a capital letter
@@ -50,8 +50,45 @@
         Must include the phrase "foo" not case sensitive.
         Must be at least 15 digits long        
         -->
+        <label>Password:
+            <input type="password" id="password">
+        </label>
+        <div id="password-error"><ul></ul></div>
         <button>Sign Up Today!</button>
     </form>
+    <script>
+        document.getElementById("newsletter-form").addEventListener("submit", validateForm)
+
+        function validateForm(event){
+            let password = document.getElementById("password").value;
+            let errors = []
+            if (password.length < 15){
+                errors.push("The password must be 15 characters or more.")
+            }
+            let nonwordChecker = /^.*\W.*$/
+            if (!nonwordChecker.test(password)){
+                errors.push("The password needs at least one special character.")
+            }
+            let fooChecker = /^.*foo.*$/i
+            if (!fooChecker.test(password)){
+                errors.push("The password needs a foo in there somewhere.")
+            }
+            if (errors.length != 0){
+                event.preventDefault()
+                displayPasswordErrors(errors)
+            }
+        }
+
+        function displayPasswordErrors(errors){
+            let passwordErrorList = document.querySelector("#password-error ul")
+            passwordErrorList.innerHTML = ""
+            errors.forEach((error) =>{
+                let item = document.createElement("li")
+                item.innerText = error
+                passwordErrorList.appendChild(item)
+            })
+        }
+    </script>
 </body>
 
 </html>
