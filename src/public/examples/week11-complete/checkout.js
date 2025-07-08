@@ -41,9 +41,6 @@ function isValidLuhn(cardNumber) {
 
 // Event listener for form submission
 checkoutForm.addEventListener('submit', function (event) {
-    // Prevent the default form submission (which would navigate away)
-    event.preventDefault();
-
     // Clear any previous error messages
     errorList.innerHTML = '';
     errorMessagesDiv.classList.add('hidden'); // Hide the error div initially
@@ -58,28 +55,20 @@ checkoutForm.addEventListener('submit', function (event) {
 
     // Credit Card Number: Is invalid or does not pass Luhn's algorithm
     if (!cardNumber || !isValidLuhn(cardNumber)) {
-        errors.push('Credit Card Number: Is invalid or does not pass Luhn\'s algorithm.');
+        errors.push("Credit Card Number: Is invalid or does not pass Luhn's algorithm.");
     }
 
     // Expiration Date: Month and Year validation
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth() + 1; // getMonth() is 0-indexed
 
-    if (isNaN(expMonth) || isNaN(expYear)) {
-        // This check might be redundant if min/max/required handle initial NaN.
-        // Keep it for robustness for cases where input type='number' might allow non-numeric input for some reason, though less likely now.
-        errors.push('Expiration Date: Month and Year must be valid numbers.');
-    } else if (expMonth < 1 || expMonth > 12) {
-        errors.push('Expiration Date: Month must be between 1 and 12.');
-    } else if (expYear < currentYear) {
+    if (expYear < currentYear) {
         errors.push('Expiration Date: Year must be current or future.');
     } else if (expYear === currentYear && expMonth < currentMonth) {
         errors.push('Expiration Date: Month/Year must be current or future.');
     }
 
-
     // --- Display Errors or Submit Form ---
-
     if (errors.length > 0) {
         // If errors exist, populate the error list and make the error div visible
         errors.forEach(error => {
@@ -87,11 +76,8 @@ checkoutForm.addEventListener('submit', function (event) {
             li.textContent = error;
             errorList.appendChild(li);
         });
-        errorMessagesDiv.classList.remove('hidden'); // Show the error div
-        // Scroll to the error messages for better visibility
-        errorMessagesDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        // If no errors, allow the form to submit to the action URL
-        checkoutForm.submit();
+
+        errorMessagesDiv.classList.remove('hidden'); // Show the error div        
+        event.preventDefault();
     }
 });
